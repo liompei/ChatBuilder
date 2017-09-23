@@ -28,6 +28,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".main.activity.WeChatFirstActivity">
         </activity>
+        <activity android:name=".main.activity.FeedbackActivity">
+        </activity>
     </application>
 
 </manifest>
