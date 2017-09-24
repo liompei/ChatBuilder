@@ -11,11 +11,10 @@ public class WeChatBuilderBean {
 
     private int whoType;  //收发类型 1我自己 2对方  3添加时间
     //当收发类型为1或2时
-    private String headUri="";  //发送者头像
     private int msgType;  //类型 1文本消息 2图片 3语音
     private String textContent;  //文字内容  (类型为0时可用)
     private String imageContent;  //图片内容  (类型为1时可用)
-    private String audioLength;  //语音内容长短  (类型为2时可用)
+    private int audioLength;  //语音内容长短  (类型为2时可用)
     //当收发类型为3时
     private String timeContent;  //时间内容  (收发类型为3时可用)
 
@@ -28,13 +27,6 @@ public class WeChatBuilderBean {
         this.whoType = whoType;
     }
 
-    public String getHeadUri() {
-        return headUri;
-    }
-
-    public void setHeadUri(String headUri) {
-        this.headUri = headUri;
-    }
 
     public int getMsgType() {
         return msgType;
@@ -60,11 +52,11 @@ public class WeChatBuilderBean {
         this.imageContent = imageContent;
     }
 
-    public String getAudioLength() {
+    public int getAudioLength() {
         return audioLength;
     }
 
-    public void setAudioLength(String audioLength) {
+    public void setAudioLength(int audioLength) {
         this.audioLength = audioLength;
     }
 

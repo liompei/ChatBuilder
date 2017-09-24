@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_weChat:  //判断是否为第一次使用
-                if (PreferenceUtils.getBoolean("isFirstWeChat", true)) {
+                if (PreferenceUtils.getIsFirstChat()) {
                     //需要设置头像和昵称
                     WeChatFirstActivity.start(this);
                 } else {

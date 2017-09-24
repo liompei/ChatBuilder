@@ -22,7 +22,7 @@ public class FeedbackActivity extends BaseActivity {
 
     @Override
     public void initViews(Bundle savedInstanceState) {
-        getToolbar("软件反馈", false);
+        getToolbar("软件反馈", true);
     }
 
     @Override

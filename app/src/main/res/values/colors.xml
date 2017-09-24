@@ -18,4 +18,5 @@
     <color name="color_divider">#d9d9d9</color>
     <color name="secondary_textColor">#999999</color>
     <color name="selector_color">#d9d9d9</color>
+    <color name="color_input">#f4f4f4</color>
 </resources>

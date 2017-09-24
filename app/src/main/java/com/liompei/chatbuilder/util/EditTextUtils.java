@@ -65,4 +65,12 @@ public class EditTextUtils {
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
+    //弹出软键盘
+    public static void openKeyboard(Activity activity, EditText editText) {
+        editText.requestFocus();
+        editText.setFocusable(true);
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInputFromInputMethod(editText.getWindowToken(), 0);
+    }
+
 }

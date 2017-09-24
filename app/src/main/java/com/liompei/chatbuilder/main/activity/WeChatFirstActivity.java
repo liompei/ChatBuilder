@@ -12,9 +12,9 @@ import android.widget.TextView;
 import com.liompei.chatbuilder.R;
 import com.liompei.chatbuilder.base.BaseActivity;
 import com.liompei.chatbuilder.util.GlideUtils;
+import com.liompei.chatbuilder.util.PreferenceUtils;
 import com.liompei.chatbuilder.widget.EditUpdateDialog;
 import com.liompei.zxlog.Zx;
-import com.vondear.rxtools.RxImageUtils;
 import com.vondear.rxtools.RxPhotoUtils;
 import com.vondear.rxtools.view.dialog.RxDialogChooseImage;
 import com.yalantis.ucrop.UCrop;
@@ -46,6 +46,7 @@ public class WeChatFirstActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void initViews(Bundle savedInstanceState) {
+        getToolbar("设置",true);
         ll_head = findView(R.id.ll_head);
         iv_head = findView(R.id.iv_head);
         ll_username = findView(R.id.ll_username);
@@ -53,7 +54,7 @@ public class WeChatFirstActivity extends BaseActivity implements View.OnClickLis
         tv_save = findView(R.id.tv_save);
 
         ll_head.setOnClickListener(this);
-        iv_head.setOnClickListener(this);
+//        iv_head.setOnClickListener(this);
         ll_username.setOnClickListener(this);
         tv_save.setOnClickListener(this);
     }
@@ -81,7 +82,7 @@ public class WeChatFirstActivity extends BaseActivity implements View.OnClickLis
                 dialogChooseImage.show();
                 break;
             case R.id.iv_head:
-                RxImageUtils.showBigImageView(mBaseActivity, resultUri);
+//                RxImageUtils.showBigImageView(mBaseActivity, resultUri);
                 break;
             case R.id.ll_username:
                 String username = tv_username.getText().toString().trim();
@@ -104,6 +105,18 @@ public class WeChatFirstActivity extends BaseActivity implements View.OnClickLis
             case R.id.tv_save:
                 Zx.d("头像地址: " + resultUri);
                 Zx.d("姓名: " + tv_username.getText().toString());
+                String mUsername = tv_username.getText().toString().trim();
+                if (resultUri == null || "".equals(resultUri)) {
+                    toast("请选择头像");
+                    return;
+                }
+                if ("".equals(mUsername)) {
+                    toast("未设置昵称");
+                    return;
+                }
+                PreferenceUtils.saveUsername(mUsername);
+                PreferenceUtils.saveHead(resultUri.toString());
+                PreferenceUtils.isFirstChat(false);
                 WeChatMainActivity.start(this);
                 finish();
                 break;

@@ -13,6 +13,7 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
+
         <ImageView
             android:id="@+id/iv_head"
             android:layout_width="45dp"
@@ -20,22 +21,63 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_default_head_24dp"/>
 
-
         <LinearLayout
-            android:id="@+id/ll_text"
-            android:layout_width="wrap_content"
+            android:id="@+id/ll_item_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_text"
+            <ImageView
+                android:id="@+id/iv_audio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/left_text_bg"
-                android:gravity="center_vertical"
-                android:text=""/>
-        </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@drawable/icon_voice_left"
+                android:visibility="gone"/>
 
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/wechat_bubble_d"
+                android:minHeight="100dp"
+                android:minWidth="100dp"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/iv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_redpaper_left"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/ll_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+
+                <TextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_text_bg"
+                    android:gravity="center_vertical"
+                    android:text=""/>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
     </LinearLayout>
 

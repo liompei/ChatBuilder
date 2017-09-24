@@ -16,4 +16,5 @@ public class MyType {
     public static final int MSG_TYPE_TEXT = 1;
     public static final int MSG_TYPE_IMG = 2;
     public static final int MSG_TYPE_AUDIO = 3;
+    public static final int MSG_TYPE_MONEY = 4;
 }

@@ -9,5 +9,5 @@ import android.view.View;
  */
 
 public interface OnItemChildClickListener {
-    void onItemChildClick(View view, int position);
+    void onItemChildClick(int whoType,View view, int position);
 }

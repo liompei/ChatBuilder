@@ -15,8 +15,47 @@ import com.liompei.chatbuilder.App;
 public class PreferenceUtils {
 
 
-    public static void saveUser() {
+    //自己的头像和名字
+    public static void saveUsername(String username) {
+        put("username", username);
+    }
 
+    public static void saveHead(String head) {
+        put("head", head);
+    }
+
+    public static String getUsername() {
+        return getString("username");
+    }
+
+    public static String getHead() {
+        return getString("head");
+    }
+
+    //对象的头像和名字
+    public static void saveOtherUsername(String username) {
+        put("otherUsername", username);
+    }
+
+    public static void saveOtherHead(String head) {
+        put("otherHead", head);
+    }
+
+    public static String getOtherUsername() {
+        return getString("otherUsername");
+    }
+
+    public static String getOtherHead() {
+        return getString("otherHead");
+    }
+
+    //判断是否需要设置自己的头像
+    public static void isFirstChat(boolean isFirstChat) {
+        put("isFirstChat", isFirstChat);
+    }
+
+    public static boolean getIsFirstChat() {
+        return getBoolean("isFirstChat", true);
     }
 
     /**

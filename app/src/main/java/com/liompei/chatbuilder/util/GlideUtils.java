@@ -41,6 +41,20 @@ public class GlideUtils {
                 .into(imageView);
     }
 
+    public static void loadPhoto(ImageView imageView, @Nullable Object model) {
+        RequestOptions mOptionsHead = new RequestOptions()
+                .centerCrop()
+                .placeholder(R.drawable.default_cover)
+                .error(R.drawable.default_cover)
+                .priority(Priority.HIGH)
+                .diskCacheStrategy(DiskCacheStrategy.NONE);  //不缓存
+        Glide.with(App.getInstance())
+                .load(model)
+                .apply(mOptionsHead)
+                .into(imageView);
+    }
+
+
 
     public static void initUCrop(Activity activity, Uri uri) {
         //Uri destinationUri = RxPhotoUtils.createImagePathUri(this);
